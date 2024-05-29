@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "BOOKING")
@@ -24,8 +25,12 @@ public class Booking {
     private Date dateEnd;
 
     @ManyToOne
-    @joinColumn(name = "customer_id")
+    @JoinColumn(name = "customer_id")
     private Customer customer;
+
+    @OneToMany(mappedBy = "booking", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Room> rooms;
+
 
 
 

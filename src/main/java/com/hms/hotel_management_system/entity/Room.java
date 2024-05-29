@@ -25,7 +25,7 @@ public class Room {
     private Customer customer_name;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "customer_id")
     private Booking booking;
 
 }

@@ -24,12 +24,19 @@ public class Booking {
     @Column
     private Date dateEnd;
 
+    @Column
+    private Long customer_id;
+
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @OneToMany(mappedBy = "booking", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Room> rooms;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id")
+    private Payment payment;
 
 
 

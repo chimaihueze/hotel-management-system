@@ -15,8 +15,7 @@ public class Payment {
     @Column
     private String Customer_name;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customer_id")
+    @OneToOne(mappedBy = "payment")
     private Booking booking;
 
 }

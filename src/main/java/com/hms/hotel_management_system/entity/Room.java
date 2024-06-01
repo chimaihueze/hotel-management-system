@@ -22,10 +22,10 @@ public class Room {
     private Float price;
 
     @Column
-    private Customer customer_name;
+    private Customer customer;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "booking_id", nullable = false)
     private Booking booking;
 
 }

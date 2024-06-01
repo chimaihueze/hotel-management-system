@@ -31,11 +31,4 @@ public class Booking {
     @OneToMany(mappedBy = "booking", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Room> rooms;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customer_id")
-    private Payment payment;
-
-
-
-
 }

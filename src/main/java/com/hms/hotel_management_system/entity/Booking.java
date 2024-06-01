@@ -13,19 +13,16 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long order_id;
+    private Long id;
 
     @Column
-    private Date order_date;
+    private Date orderDate;
 
     @Column
     private Date dateStart;
 
     @Column
     private Date dateEnd;
-
-    @Column
-    private Long customer_id;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")

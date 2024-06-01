@@ -12,10 +12,8 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
-    private String Customer_name;
-
-    @OneToOne(mappedBy = "payment")
+    @OneToOne
+    @JoinColumn(name = "booking_id", nullable = false)
     private Booking booking;
 
 }

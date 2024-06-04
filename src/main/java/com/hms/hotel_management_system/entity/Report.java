@@ -18,4 +18,8 @@ public class Report {
     @ManyToOne
     @JoinColumn(name = "booking_id")
     private Booking booking;
+
+    @ManyToOne
+    @JoinColumn(name = "bookingManager_id")
+    private BookingManager bookingManager;
 }

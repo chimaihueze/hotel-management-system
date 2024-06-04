@@ -12,6 +12,9 @@ public class Report {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column
+    private Customer customer;
+
     @ManyToOne
     @JoinColumn(name = "booking_id")
     private Booking booking;

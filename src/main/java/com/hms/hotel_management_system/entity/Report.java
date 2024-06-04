@@ -22,4 +22,8 @@ public class Report {
     @ManyToOne
     @JoinColumn(name = "bookingManager_id")
     private BookingManager bookingManager;
+
+    @ManyToOne
+    @JoinColumn(name = "HR_id")
+    private HR hr;
 }

@@ -28,6 +28,10 @@ public class Booking {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
+    @ManyToOne
+    @JoinColumn(name = "bookingManager_id")
+    private BookingManager bookingManager;
+
     @OneToMany(mappedBy = "booking", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Room> rooms;
 

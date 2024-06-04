@@ -14,6 +14,9 @@ public class HR {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column
+    private Customer customer;
+
     @OneToMany(mappedBy = "HR", fetch = FetchType.LAZY ,cascade = CascadeType.ALL)
     private List<Report> Reports;
 }

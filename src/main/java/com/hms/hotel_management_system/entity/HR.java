@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "HR")
-public class HR {
+public class HR extends Staffs{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,6 +17,6 @@ public class HR {
     @Column
     private Customer customer;
 
-    @OneToMany(mappedBy = "HR", fetch = FetchType.LAZY ,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "hr", fetch = FetchType.LAZY ,cascade = CascadeType.ALL)
     private List<Report> Reports;
 }

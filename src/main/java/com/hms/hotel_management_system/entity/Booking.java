@@ -37,7 +37,7 @@ public class Booking {
     private List<Room> rooms;
 
     @OneToMany(mappedBy = "booking", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Report> reports;
+    private List<Report> reports;
 
 
 

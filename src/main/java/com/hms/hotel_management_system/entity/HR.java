@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "HR")
-public class HR extends Staffs{
+public class HR extends Staff {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

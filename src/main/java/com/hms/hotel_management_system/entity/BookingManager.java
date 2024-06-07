@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "BOOKING_MANAGER")
-public class BookingManager {
+public class BookingManager extends Staffs{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

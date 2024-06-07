@@ -13,10 +13,10 @@ public class Person {
     private Long id;
 
     @Column
-    private String firstname;
+    private String firstName;
 
     @Column
-    private String lastname;
+    private String lastName;
 
     @Column
     private String email;

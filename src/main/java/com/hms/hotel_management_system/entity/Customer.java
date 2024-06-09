@@ -9,17 +9,11 @@ import java.util.Set;
 @Entity
 @Data
 @Table(name = "CUSTOMER")
-public class Customer extends Person {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @Column
-    private String Customer_name;
+public class Customer extends User {
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Booking> bookings;
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Ticket> tickets;
+    private List<Ticket> tickets;
 }

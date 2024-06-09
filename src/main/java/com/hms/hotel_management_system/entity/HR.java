@@ -10,13 +10,9 @@ import java.util.List;
 @Table(name = "HR")
 public class HR extends Staff {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
     @Column
     private Customer customer;
 
     @OneToMany(mappedBy = "hr", fetch = FetchType.LAZY ,cascade = CascadeType.ALL)
-    private List<Report> Reports;
+    private List<Report> reports;
 }

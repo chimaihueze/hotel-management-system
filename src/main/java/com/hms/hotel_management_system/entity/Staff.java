@@ -6,9 +6,11 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "Staff")
-public class Staff extends Person {
+public class Staff extends User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column
+    private String department;
+
+    @Column
+    private Double Salary;
 }

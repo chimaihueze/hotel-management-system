@@ -9,16 +9,13 @@ import java.util.List;
 @Data
 @Table(name = "BOOKING_MANAGER")
 public class BookingManager extends Staff {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
 
     @Column
     private Customer customer;
 
     @OneToMany(mappedBy = "bookingManager", fetch = FetchType.LAZY ,cascade = CascadeType.ALL)
-    private List<Booking> Bookings;
+    private List<Booking> bookings;
 
     @OneToMany(mappedBy = "bookingManager", fetch = FetchType.LAZY ,cascade = CascadeType.ALL)
-    private List<Report> Reports;
+    private List<Report> reports;
 }

@@ -1,9 +1,13 @@
 package com.hms.hotel_management_system.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
+@MappedSuperclass
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Table(name = "USER")
 public class User {
@@ -12,15 +16,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
     private String firstName;
 
-    @Column
     private String lastName;
 
-    @Column
     private String email;
 
-    @Column
     private String phone;
 }

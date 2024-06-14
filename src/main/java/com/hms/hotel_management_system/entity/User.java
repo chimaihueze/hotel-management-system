@@ -5,19 +5,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Data
+@MappedSuperclass
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "PAYMENT")
-public class Payment {
+@Data
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "booking_id", nullable = false)
-    private Booking booking;
+    private String firstName;
 
+    private String lastName;
+
+    private String email;
+
+    private String phone;
 }

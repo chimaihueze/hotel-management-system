@@ -7,29 +7,27 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "ROOM")
-public class Room {
+@NoArgsConstructor
+@Table(name = "REPORT")
+public class Report {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long Id;
-
-    @Column
-    private String name;
-
-    @Column
-    private Double size;
-
-    @Column
-    private Float price;
+    private Long id;
 
     @Column
     private Customer customer;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "booking_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "booking_id")
     private Booking booking;
 
+    @ManyToOne
+    @JoinColumn(name = "bookingManager_id")
+    private BookingManager bookingManager;
+
+    @ManyToOne
+    @JoinColumn(name = "HR_id")
+    private HR hr;
 }
